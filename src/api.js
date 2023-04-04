@@ -8,7 +8,7 @@ const http = axiosRateLimit(axios.create(), {maxRequests: 130, perMilliseconds: 
  * @returns Promise, which can be awaited elsewhere
  */
 export function login(auth) {
-    return http("https://api.epics.gg/api/v1/auth/login", {
+    return http("https://api.kolex.gg/api/v1/auth/login", {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json'
@@ -18,7 +18,7 @@ export function login(auth) {
 }
 
 export function getUserInfo(jwt, category) {
-    return http("https://api.epics.gg/api/v1/user/info", {
+    return http("https://api.kolex.gg/api/v1/user/info", {
         method: 'GET',
         headers: {
             'Content-Type': 'application/json',
@@ -31,7 +31,7 @@ export function getUserInfo(jwt, category) {
 }
 
 export function getCollections(jwt, category, season, userId) {
-    return http(`https://api.epics.gg/api/v1/collections/users/${userId}/user-summary`, {
+    return http("https://api.kolex.gg/api/v1/collections/users/${userId}/user-summary", {
         method: 'GET',
         headers: {
             'Content-Type': 'application/json',
@@ -45,7 +45,7 @@ export function getCollections(jwt, category, season, userId) {
 }
 
 export function getAllCollections(jwt, category) {
-    return http(`https://api.epics.gg/api/v1/collections`, {
+    return http("https://api.kolex.gg/api/v1/collections", {
         method: 'GET',
         headers: {
             'Content-Type': 'application/json',
@@ -58,7 +58,7 @@ export function getAllCollections(jwt, category) {
 }
 
 export function getCardTemplates(jwt, category, collectionId) {
-    return http(`https://api.epics.gg/api/v1/collections/${collectionId}/card-templates`, {
+    return http("https://api.kolex.gg/api/v1/collections/${collectionId}/card-templates", {
         method: 'GET',
         headers: {
             'Content-Type': 'application/json',
@@ -71,7 +71,7 @@ export function getCardTemplates(jwt, category, collectionId) {
 }
 
 export function getCardsByTemplate(jwt, category, userId, templateId) {
-    return http(`https://api.epics.gg/api/v1/collections/users/${userId}/card-templates/${templateId}/cards`, {
+    return http("https://api.kolex.gg/api/v1/collections/users/${userId}/card-templates/${templateId}/cards", {
         method: 'GET',
         headers: {
             'Content-Type': 'application/json',
@@ -84,7 +84,7 @@ export function getCardsByTemplate(jwt, category, userId, templateId) {
 }
 
 export function getStickersByTemplate(jwt, category, userId, templateId) {
-    return http(`https://api.epics.gg/api/v1/collections/users/${userId}/sticker-templates/${templateId}/stickers`, {
+    return http("https://api.kolex.gg/api/v1/collections/users/${userId}/sticker-templates/${templateId}/stickers", {
         method: 'GET',
         headers: {
             'Content-Type': 'application/json',
@@ -97,7 +97,7 @@ export function getStickersByTemplate(jwt, category, userId, templateId) {
 }
 
 export function getStickerTemplates(jwt, category, collectionId) {
-    return http(`https://api.epics.gg/api/v1/collections/${collectionId}/sticker-templates`, {
+    return http("https://api.kolex.gg/api/v1/collections/${collectionId}/sticker-templates", {
         method: 'GET',
         headers: {
             'Content-Type': 'application/json',
@@ -110,7 +110,7 @@ export function getStickerTemplates(jwt, category, collectionId) {
 }
 
 export function getLeaderboard(jwt, category, collectionId, page) {
-    return http(`https://api.epics.gg/api/v1/leaderboards/collections/${collectionId}`, {
+    return http("https://api.kolex.gg/api/v1/leaderboards/collections/${collectionId}", {
         method: 'GET',
         headers: {
             'Content-Type': 'application/json',
@@ -124,7 +124,7 @@ export function getLeaderboard(jwt, category, collectionId, page) {
 }
 
 export function getItems(jwt, category, collectionId, userId) {
-    return http(`https://api.epics.gg/api/v1/collections/${collectionId}/users/${userId}/owned2`, {
+    return http("https://api.kolex.gg/api/v1/collections/${collectionId}/users/${userId}/owned2", {
         method: 'GET',
         headers: {
             'Content-Type': 'application/json',
@@ -137,7 +137,7 @@ export function getItems(jwt, category, collectionId, userId) {
 }
 
 export function getAppInfo(jwt, category) {
-    return http("https://api.epics.gg/api/v1/settings/web", {
+    return http("https://api.kolex.gg/api/v1/settings/web", {
         method: 'GET',
         headers: {
             'Content-Type': 'application/json',
@@ -150,7 +150,7 @@ export function getAppInfo(jwt, category) {
 }
 
 export function getStorePacks(jwt, category, page) {
-    return http("https://api.epics.gg/api/v1/packs", {
+    return http("https://api.kolex.gg/api/v1/packs", {
         method: 'GET',
         headers: {
             'Content-Type': 'application/json',
@@ -164,7 +164,7 @@ export function getStorePacks(jwt, category, page) {
 }
 
 export function getUserPacks(jwt, category, page) {
-    return http("https://api.epics.gg/api/v1/packs/user", {
+    return http("https://api.kolex.gg/api/v1/packs/user", {
         method: 'GET',
         headers: {
             'Content-Type': 'application/json',
@@ -178,7 +178,7 @@ export function getUserPacks(jwt, category, page) {
 }
 
 export function getPlayers(jwt, category) {
-    return http("https://api.epics.gg/api/v1/players", {
+    return http("https://api.kolex.gg/api/v1/players", {
         method: 'GET',
         headers: {
             'Content-Type': 'application/json',
@@ -191,7 +191,7 @@ export function getPlayers(jwt, category) {
 }
 
 export function getRoles(jwt, category) {
-    return http("https://api.epics.gg/api/v1/players/roles", {
+    return http("https://api.kolex.gg/api/v1/players/roles", {
         method: 'GET',
         headers: {
             'Content-Type': 'application/json',
@@ -204,7 +204,7 @@ export function getRoles(jwt, category) {
 }
 
 export function getPlayerMaps(jwt, category) {
-    return http("https://api.epics.gg/api/v1/ultimate-team/players", {
+    return http("https://api.kolex.gg/api/v1/ultimate-team/players", {
         method: 'GET',
         headers: {
             'Content-Type': 'application/json',
@@ -217,7 +217,7 @@ export function getPlayerMaps(jwt, category) {
 }
 
 export function getMaps(jwt, category) {
-    return http("https://api.epics.gg/api/v1/ultimate-team/maps", {
+    return http("https://api.kolex.gg/api/v1/ultimate-team/maps", {
         method: 'GET',
         headers: {
             'Content-Type': 'application/json',
@@ -230,7 +230,7 @@ export function getMaps(jwt, category) {
 }
 
 export function getCardsByPlayer(jwt, category, userId, playerId, season, page) {
-    return http(`https://api.epics.gg/api/v1/cards/owned/users/${userId}`, {
+    return http("https://api.kolex.gg/api/v1/cards/owned/users/${userId}", {
         method: 'GET',
         headers: {
             'Content-Type': 'application/json',
@@ -246,7 +246,7 @@ export function getCardsByPlayer(jwt, category, userId, playerId, season, page) 
 }
 
 export function getMarketListings(jwt, category, templateId, type, page) {
-    return http(`https://api.epics.gg/api/v1/market/buy`, {
+    return http("https://api.kolex.gg/api/v1/market/buy", {
         method: 'GET',
         headers: {
             'Content-Type': 'application/json',
@@ -262,7 +262,7 @@ export function getMarketListings(jwt, category, templateId, type, page) {
 }
 
 export function getUserMarketListings(jwt, category, userId, type, page) {
-    return http(`https://api.epics.gg/api/v1/market/listed/users/${userId}`, {
+    return http("https://api.kolex.gg/api/v1/market/listed/users/${userId}", {
         method: 'GET',
         headers: {
             'Content-Type': 'application/json',
@@ -278,7 +278,7 @@ export function getUserMarketListings(jwt, category, userId, type, page) {
 }
 
 export function updateMarketListing(jwt, category, marketId, minOffer, price) {
-    return http(`https://api.epics.gg/api/v1/market/listed/${marketId}`, {
+    return http("https://api.kolex.gg/api/v1/market/listed/${marketId}", {
         method: 'PATCH',
         headers: {
             'Content-Type': 'application/json',
@@ -295,7 +295,7 @@ export function updateMarketListing(jwt, category, marketId, minOffer, price) {
 }
 
 export function removeMarketListing(jwt, marketId) {
-    return http(`https://api.epics.gg/api/v1/market/listed/${marketId}`, {
+    return http("https://api.kolex.gg/api/v1/market/listed/${marketId}", {
         method: 'DELETE',
         headers: {
             'Content-Type': 'application/json',
@@ -305,7 +305,7 @@ export function removeMarketListing(jwt, marketId) {
 }
 
 export function listItem(jwt, category, id, minOffer, price, type) {
-    return http("https://api.epics.gg/api/v1/market/list", {
+    return http("https://api.kolex.gg/api/v1/market/list", {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json',
@@ -324,7 +324,7 @@ export function listItem(jwt, category, id, minOffer, price, type) {
 }
 
 export function getTeams(jwt) {
-    return http(`https://api.epics.gg/api/v1/teams`, {
+    return http("https://api.kolex.gg/api/v1/teams", {
         method: 'GET',
         headers: {
             'Content-Type': 'application/json',
@@ -334,7 +334,7 @@ export function getTeams(jwt) {
 }
 
 export function searchUsers(jwt, category, username) {
-    return http(`https://api.epics.gg/api/v1/users/search`, {
+    return http("https://api.kolex.gg/api/v1/users/search", {
         method: 'GET',
         headers: {
             'Content-Type': 'application/json',
@@ -348,7 +348,7 @@ export function searchUsers(jwt, category, username) {
 }
 
 export function getTrades(jwt, category, page) {
-    return http(`https://api.epics.gg/api/v1/trade?status=open`, {
+    return http("https://api.kolex.gg/api/v1/trade?status=open", {
         method: 'GET',
         headers: {
             'Content-Type': 'application/json',
@@ -362,7 +362,7 @@ export function getTrades(jwt, category, page) {
 }
 
 export function acceptTrade(jwt, category, tradeId) {
-    return http(`https://api.epics.gg/api/v1/trade/accept-offer`, {
+    return http("https://api.kolex.gg/api/v1/trade/accept-offer", {
         method: 'PATCH',
         headers: {
             'Content-Type': 'application/json',
@@ -378,7 +378,7 @@ export function acceptTrade(jwt, category, tradeId) {
 }
 
 export function getCardIds(jwt, category, collection, userId) {
-    return http(`https://api.epics.gg/api/v1/collections/users/${userId}/cardids`, {
+    return http("https://api.kolex.gg/api/v1/collections/users/${userId}/cardids", {
         method: 'GET',
         headers: {
             'Content-Type': 'application/json',
@@ -392,7 +392,7 @@ export function getCardIds(jwt, category, collection, userId) {
 }
 
 export function getStickerIds(jwt, category, collection, userId) {
-    return http(`https://api.epics.gg/api/v1/collections/users/${userId}/stickerids`, {
+    return http("https://api.kolex.gg/api/v1/collections/users/${userId}/stickerids", {
         method: 'GET',
         headers: {
             'Content-Type': 'application/json',
@@ -414,7 +414,7 @@ export function getStickerIds(jwt, category, collection, userId) {
  * @returns Promise to be awaited
  */
 export function sendTrade(jwt, category, userId, entities) {
-    return http(`https://api.epics.gg/api/v1/trade/create-offer`, {
+    return http("https://api.kolex.gg/api/v1/trade/create-offer", {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json',
@@ -446,7 +446,7 @@ export function getCircuit(jwt, category, circuitId) {
 }
 
 export function getActiveCircuits(jwt, category) {
-    return http(`https://api.epics.gg/api/v1/ultimate-team/circuits`, {
+    return http("https://api.kolex.gg/api/v1/ultimate-team/circuits", {
         method: 'GET',
         headers: {
             'Content-Type': 'application/json',
@@ -459,7 +459,7 @@ export function getActiveCircuits(jwt, category) {
 }
 
 export function getRushAchievements(jwt, category, userId) {
-    return http(`https://api.epics.gg/api/v1/achievements/${userId}/user`, {
+    return http("https://api.kolex.gg/api/v1/achievements/${userId}/user", {
         method: 'GET',
         headers: {
             'Content-Type': 'application/json',
@@ -473,7 +473,7 @@ export function getRushAchievements(jwt, category, userId) {
 }
 
 export function getUserRosters(jwt, category, userId) {
-    return http(`https://api.epics.gg/api/v1/ultimate-team/rosters`, {
+    return http("https://api.kolex.gg/api/v1/ultimate-team/rosters", {
         method: 'GET',
         headers: {
             'Content-Type': 'application/json',
@@ -487,7 +487,7 @@ export function getUserRosters(jwt, category, userId) {
 }
 
 export function getRostersById(jwt, category, rosterIds) {
-    return http(`https://api.epics.gg/api/v1/ultimate-team/pve/rosters`, {
+    return http("https://api.kolex.gg/api/v1/ultimate-team/pve/rosters", {
         method: 'GET',
         headers: {
             'Content-Type': 'application/json',
@@ -501,7 +501,7 @@ export function getRostersById(jwt, category, rosterIds) {
 }
 
 export function getTotw(jwt, category) {
-    return http(`https://api.epics.gg/api/v1/ultimate-team/pve/rosters`, {
+    return http("https://api.kolex.gg/api/v1/ultimate-team/pve/rosters", {
         method: 'GET',
         headers: {
             'Content-Type': 'application/json',
@@ -526,7 +526,7 @@ export function playRushPve(jwt, category, circuitId, stageId, bannedMaps, roste
             id: circuitId,
             stageId: stageId
         }
-    return http(`https://api.epics.gg/api/v1/ultimate-team/pve/games`, {
+    return http("https://api.kolex.gg/api/v1/ultimate-team/pve/games", {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json',
@@ -537,7 +537,7 @@ export function playRushPve(jwt, category, circuitId, stageId, bannedMaps, roste
 }
 
 export function openPack(jwt, category, packId) {
-    return http(`https://api.epics.gg/api/v1/packs/open2`, {
+    return http("https://api.kolex.gg/api/v1/packs/open2", {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json',
